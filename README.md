@@ -9,7 +9,7 @@ Number | Title | Learning Goals | Length | Laptop Allowed? |
 --- | --- | --- | --- | --- | 
 10:15 | **_An optimized clock_** | Refresh dom knowledge, understand computer friendly code is not always developer friendly and vice versa, know how to plan building an app | 45 min. | yes |
 11:45 | **_React: Why it is everyone's cup of tea_** | Understand what makes React computer friendly and what makes it developer friendly | 45 min. | No |
-13:30 | **_Create React App: What is not part of react_** | Understand `create-react-app` fill structure, know what Babel, Jest and Webpack are used for | 45 min | yes |
+13:30 | **_Create React App: What is not part of react_** | Understand `create-react-app` fill structure, know what Babel, Jest, Reaxct-dom and Webpack are used for | 45 min | yes |
 15:00 | **_Components, Properties and State_**| What components, props and state are, how props are diferent from components |30 min. | No |
 
 * Students work on labs
@@ -35,6 +35,12 @@ Make sure the following steps end up on the white board
     - As for CSS: You want different colors for hours, minutes and seconds and they should be next to each other
     - HTML: following from the above, you probably want a `<div>` for clock (for flexbox), a `<div>` for hours, minutes and seconds each, and colons to separate them.
 * **Step 4: Write your Code**
+
+
+* Let students create the clock, after live code an example
+* Let students create optimized clock in groups, after live code an example
+* Show the difference of the optimized and not opimized clock, show how that is problematic in the wave (fastest speed)
+* Explain the problem: code that is easy to read & maintain is not always nice to your browser, code that is good for the browser is not always friendly for the developer.
 
 ### Materials
  * Student laptops
