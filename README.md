@@ -56,6 +56,7 @@ Make sure the following steps end up on the white board
 * Screen
 * [Bookshelves project]()
 * Whiteboard
+* ![domtree](https://cd.sseu.re/DSC_0124.JPG_2018-07-12_18-02-34.png)
 
 ## Workshop III: Create React App: What **is not** part of react
 **_Introduce the structure of a `create-react-app`, in groups students will prepare and present a short presentation on what `react-dom`, `jest`, `webpack` and `babel` are about_**
