@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Naive clock!</title>
+
+  <style>
+    #clock {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #hours {
+      color: blue;
+    }
+
+    #minutes {
+      color: orange;
+    }
+
+    #seconds {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="clock">
+      <h2><span id='hours'></span>:</h2>
+      <h2><span id='minutes'></span>:</h2> 
+      <h2><span id='seconds'></span></h2>
+    </div>
+  </main>
+
+  <script>
+    const displayNumbers = (time) => {
+      if (time > 10){
+        return time
+      } else {
+        return `0${time}`
+      }
+    }
+
+    const newDate = () => {
+      let date = new Date()
+      let hours = date.getHours()
+      let minutes = date.getMinutes()
+      let seconds = date.getSeconds()
+
+      document.getElementById('hours').innerHTML = displayNumbers(hours)
+      document.getElementById('minutes').innerHTML = displayNumbers(minutes)
+      document.getElementById('seconds').innerHTML = displayNumbers(seconds) 
+    }
+    
+    setInterval(() => { newDate() }, 1000)
+  </script>
+</body>
+
+</html>
