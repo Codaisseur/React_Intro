@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Welcome</title>
+</head>
+
+<body>
+
+  <div id="main"> </div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+
+  <script type="text/babel">
+    // Here, we will be exploring some of the power of jsx!
+
+    const displayGreeting = (name) => {
+      return <h1>Hello {name}</h1>
+    } 
+
+    class Students extends React.PureComponent {
+      displayStudentNames(students) {
+        return students.map(student => { 
+          return <span> { student }, </span>
+        })
+      }
+  
+      render() {
+        const students = ['Giovani', 'Isabella', 'Sjoerd', 'Daniel']
+        return(
+          <div>
+            <p> You will be joining </p>
+            { this.displayStudentNames(students) }
+          </div>
+        )
+      }
+    }
+
+    // Usually we gather everything we want to render in an app function/class
+    class App extends React.PureComponent {  
+
+      // A class always has a render method
+      render() {
+
+        // Using JSX, you can also write normal JS!
+        const name = prompt("Please enter your name", "Luke Skywalker")
+
+        //your render method always has return statement
+        return(
+
+          //your elements should always be wrapped in a single element (usually a div)
+          <div>
+            <h1>Welcome to this workshop</h1>
+            { displayGreeting(name) }
+            < Students />
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('main')
+    )
+  </script>
+</body>
+
+</html>

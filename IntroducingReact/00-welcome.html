@@ -8,9 +8,12 @@
   <div id='main'>
   </div>
   <script>
-    const name = prompt("Please enter your name", "Luke Skywalker");
+
+    const name = prompt("Please enter your name", "Luke Skywalker")
+
     const greeting = document.createElement('h1')
     greeting.setAttribute('id', 'greeting')
+    
     document.getElementById('main').appendChild(greeting)
     document.getElementById('greeting').innerHTML = `Hello ${name}`
   </script>
