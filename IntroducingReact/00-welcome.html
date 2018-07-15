@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Welcome!</title>
+</head>
+<body>
+  <div id='main'>
+  </div>
+  <script>
+    const name = prompt("Please enter your name", "Luke Skywalker");
+    const greeting = document.createElement('h1')
+    greeting.setAttribute('id', 'greeting')
+    document.getElementById('main').appendChild(greeting)
+    document.getElementById('greeting').innerHTML = `Hello ${name}`
+  </script>
+</body>
+</html>

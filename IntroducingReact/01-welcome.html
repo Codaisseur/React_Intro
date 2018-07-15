@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Welcome</title>
+</head>
+<body>
+  
+  <div id="main"> </div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script>
+    // Ask for name
+    const name = prompt("Please enter your name", "Luke Skywalker")
+
+    // create element to display name
+    const displayGreeting = (name) => {
+      return React.createElement('h1', 'greeting', `hello ${name}`)
+    }
+
+    //render the element
+    ReactDOM.render(
+      displayGreeting(name),
+      document.getElementById('main')
+    )
+  </script>
+</body>
+</html>

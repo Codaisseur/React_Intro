@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Clock</title>
+
+  <style>
+    #clock-container {
+      font-size: 45pt;
+    }
+
+    #hours {
+      color: blue;
+    }
+
+    #minutes {
+      color: orange;
+    }
+
+    #seconds {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="main"></main>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script>
+    function prefix(n) {
+      return n > 10 ? n : '0' + n
+    }
+
+    class Clock extends React.Component {
+      componentWillMount() {
+        this.tick()
+      }
+      tick() {
+        const now = new Date()
+        this.setState({
+          hours: now.getHours(),
+          minutes: now.getMinutes(),
+          seconds: now.getSeconds()
+        })
+        setTimeout(this.tick.bind(this), 1000)
+      }
+      render() {
+        return React.createElement(
+          'div',
+          { id: 'clock-container' },
+          React.createElement('span', { id: "hours" }, prefix(this.state.hours)),
+          ' : ',
+          React.createElement('span', { id: "minutes" }, prefix(this.state.minutes)),
+          ' : ',
+          React.createElement('span', { id: "seconds" }, prefix(this.state.seconds))
+        )
+      }
+    }
+
+    ReactDOM.render(
+      React.createElement(Clock),
+      document.getElementById('main')
+    )
+  </script>
+</body>
+
+</html>
