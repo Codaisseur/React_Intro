@@ -8,7 +8,7 @@ class App extends PureComponent {
     seconds: '',
   }
 
-  updateState = () => {
+  updateState = () => { // updateState is too generic of a name. I would call this function 'tick' (like a clock ticking!)
     const date = new Date()
     this.setState({
       hours: date.getHours(),
@@ -27,7 +27,8 @@ class App extends PureComponent {
   }
 
   render() {
-    this.checkNewTime()
+    this.checkNewTime() // I would call this function in ComponentDidMount and only once, 
+    // since by setting the interval it will get called multiple times
     return (
       <div className="App">
         <span className='hours'> { this.formatTime(this.state.hours) } </span>
